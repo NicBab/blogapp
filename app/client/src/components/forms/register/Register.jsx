@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useContext } from "react";
 import { Context } from "../../context/Context"
+import "./Register.css"
 
 const Register = () => {
   const [username, setUsername] = useState("");
