@@ -1,9 +1,11 @@
-import React from 'react'
+import { Header } from "../.././components/index/index.comp";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <Header />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
