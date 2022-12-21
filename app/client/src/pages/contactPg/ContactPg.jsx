@@ -1,9 +1,5 @@
-import React from 'react'
+import { Contact } from "../.././components/index/index.comp"
 
-const ContactPg = () => {
-  return (
-    <div>ContactPg</div>
-  )
-}
+const ContactPg = () => <Contact />
 
 export default ContactPg
