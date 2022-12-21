@@ -4,20 +4,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios"
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
-  const { search } = useLocation();
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await axios.get("/posts" + search)
-        setPosts(res.data)
-        
-      } catch (error) {
-        console.error(error)
-      }
-    }
-  }, [search])
 
   return (
     <div>
