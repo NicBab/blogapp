@@ -2,6 +2,7 @@ import { Header, Sidebar, Posts } from "../../components/index/index.comp";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios"
+import "./HomePg.css"
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -17,6 +18,7 @@ const Home = () => {
         console.error(error)
       }
     }
+    fetchPosts()
   }, [search])
 
   return (
