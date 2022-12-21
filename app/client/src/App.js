@@ -1,15 +1,35 @@
-import { RegisterPg, Home, LoginPg } from "./pages/index/index.pages";
-import { Routes, Route } from "react-router-dom"
+import { useContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Topbar } from "./components/index/index.comp";
+import {
+  HomePg,
+  AboutPg,
+  ContactPg,
+  Single,
+  Write,
+  Settings,
+  LoginPg,
+  RegisterPg,
+} from "./pages/index/index.pages";
+import { Context } from "./context/Context"
 
 function App() {
+  const {user} = useContext(Context)
+  
   return (
-    <div className="App">
+   <>
+      <Topbar />
       <Routes>
-        <Route path="/" element={ <Home />}></Route>
-        <Route path="/register" element={<RegisterPg />}></Route> 
-        <Route path="/login" element={<LoginPg />}></Route> 
+        <Route exact path="/" element={<HomePg />} />
+        <Route path="/about" element={<AboutPg />} />
+        <Route path="/contact" element={<ContactPg />} />
+        <Route path="/write" element={user ? <Write /> : <RegisterPg />} />
+        <Route path="/login" element={ user ? <HomePg /> : <LoginPg />} />
+        <Route path="/register" element={user ? <HomePg /> : <RegisterPg />} />
+        <Route path="/settings" element={user ? <Settings /> : <RegisterPg />} />
+        <Route path="/post/:postId" element={<Single />} />
       </Routes>
-    </div>
+      </>
   );
 }
 

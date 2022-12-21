@@ -1,0 +1,97 @@
+.write {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.writeImg {
+    margin-left: 150px;
+    width: 50vw;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.writeIcon {
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: grey;
+}
+
+.writeForm {
+    position: relative;
+   flex: 2;
+   width: 100%;
+}
+
+.writeFormGroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.writeInput {
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+}
+
+.writeInput:focus {
+    outline: none;
+}
+
+.writeText {
+    font-size: 20px;
+    height: 100vh;
+    width: 100%;
+    border: none;
+}
+
+.writeCatGroup {
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.writeCatInput {
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+}
+
+.writeCatInput:focus {
+    outline: none;
+}
+
+.writeCatInput {
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+}
+
+.writeSubmit {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background-image: linear-gradient(to bottom left, rgb(1, 166, 1), rgb(2, 119, 2));
+    box-shadow: 10px 10px 16px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.1s ease;
+  }
+  .writeSubmit:hover {
+   transform: scale(1.01)
+  }
+

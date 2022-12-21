@@ -1,4 +1,4 @@
-import { Header } from "../.././components/index/index.comp";
+import { Header } from "../../components/index/index.comp";
 
 const Home = () => {
   return (
