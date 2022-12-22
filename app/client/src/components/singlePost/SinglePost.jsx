@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import { Context } from "../../context/Context";
+import { Context } from "../.././context/Context"
 import "./SinglePost.css";
 
 export default function SinglePost() {
@@ -57,7 +57,7 @@ export default function SinglePost() {
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
-          <img src={PF + post.photo} alt="" className="singlePostImg" />
+          <img src={PF + post.photo} alt={`${post._id}`} className="singlePostImg" />
         )}
         {updateMode ? (
           <input

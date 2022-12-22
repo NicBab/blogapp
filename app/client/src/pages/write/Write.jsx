@@ -1,7 +1,7 @@
 import "./Write.css";
 import { useContext, useState } from "react";
 import axios from "axios";
-import { Context } from "../../context/Context";
+import { Context } from "../.././context/Context"
 import { Sidebar } from "../../components/index/index.comp";
 
 import Box from "@mui/material/Box";

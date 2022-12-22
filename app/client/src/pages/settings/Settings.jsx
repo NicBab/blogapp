@@ -2,7 +2,7 @@ import "./Settings.css";
 import { Link } from "react-router-dom"
 import { Sidebar } from "../../components/index/index.comp";
 import { useContext, useState } from "react";
-import { Context } from "../../context/Context";
+import { Context } from "../.././context/Context"
 import axios from "axios";
 
 const Settings = () => {
