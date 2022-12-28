@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [cats, setCats] = useState([]);
-
   const catDescending = [...cats].sort((a, b) => (a.name > b.name ? 1 : -1));
 
   useEffect(() => {
@@ -20,11 +19,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">About Me</span>
-        <img
-          className=""
-          src=""
-          alt=""
-        />
+        <img className="" src="" alt="" />
         <p></p>
       </div>
 
