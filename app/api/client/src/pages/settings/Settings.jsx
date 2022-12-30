@@ -12,7 +12,7 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const PF = "http://localhost:6001/images/";
+  const PF = "https://mernblogapp.herokuapp.com/images/";
 
   const handleUpdateAccount = async (e) => {
     dispatch({ type: "UPDATE_START" });
