@@ -1,6 +1,6 @@
-const PORT = process.env.PORT || 6001;
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 6001
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const multer = require("multer");
@@ -42,5 +42,5 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
 app.listen(PORT, () => {
-  console.log("Backend is running.");
+  console.log(`Server is running on port ${PORT}.`);
 });

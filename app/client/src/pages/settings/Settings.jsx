@@ -46,16 +46,14 @@ const Settings = () => {
   };
 
   const deleteAccount = async (_id) => {
-    window.alert(
-      "Are you sure you want to delete this account? This action can not be undone"
-    );
     try {
-      const res = await axios.delete(`/users/${user._id}`);
-      
+      window.alert("Are you sure you want to delete this account? This action can not be undone")
+      await axios.delete(`/users/${user._id}`, {
+        _id: { username: user._id },
+      });
       window.location.replace("/");
-  
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error("error with user id")
     }
   };
 

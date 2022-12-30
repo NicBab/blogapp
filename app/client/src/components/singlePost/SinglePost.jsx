@@ -30,7 +30,7 @@ export default function SinglePost() {
   const handleDelete = async () => {
     try {
       await axios.delete(`/posts/${post._id}`, {
-        data: { username: user.username },
+        username: user._id,
       });
       window.location.replace("/");
     } catch (err) {}

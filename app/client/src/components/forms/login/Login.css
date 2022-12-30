@@ -4,9 +4,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)), 
+    background: linear-gradient(rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
         url("https://images.pexels.com/photos/768473/pexels-photo-768473.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
     background-size: cover;
 }
@@ -16,22 +15,24 @@
 }
 
 .loginForm {
+    width: 10rem;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.loginForm > label {
-    margin: 10px 0;
+.loginForm>label {
+    margin: 10px 0 0;
 }
 
 .loginInput {
-    padding: 10px;
+    width: 100%;
     border: none;
-   background-color: white;
+    background-color: white;
 }
 
 .loginButton {
+    width: 100%;
     margin-top: 20px;
     cursor: pointer;
     background-color: rgb(76, 161, 129);
@@ -56,4 +57,3 @@
     color: white;
     border-radius: 10px;
 }
-
