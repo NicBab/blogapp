@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { axiosInstance } from "../../.././config"
 import { useState, useContext } from "react";
-import { Context } from "../../.././context/Context"
+import { Context } from "../../../context/Context"
 import "./Register.css"
 
 const Register = () => {
@@ -16,7 +16,7 @@ const Register = () => {
     dispatch({type: "LOGIN_START"})
     setError(false);
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axiosInstance.post("/auth/register", {
         username,
         email,
         password,

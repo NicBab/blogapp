@@ -1,4 +1,4 @@
-import { Contact } from "../.././components/index/index.comp"
+import { Contact } from "../../components/index/index.comp"
 
 const ContactPg = () => <Contact />
 

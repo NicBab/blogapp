@@ -1,7 +1,7 @@
 import { Header, Sidebar, Posts } from "../../components/index/index.comp";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import axios from "axios"
+import { axiosInstance } from "../.././config"
 import "./HomePg.css"
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("/posts/" + search)
+        const res = await axiosInstance.get("/posts/" + search)
         setPosts(res.data)
         
       } catch (error) {

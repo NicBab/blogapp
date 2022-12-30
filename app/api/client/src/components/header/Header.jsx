@@ -1,5 +1,5 @@
 import "./Header.css";
-import green_texture from "../.././assets/images/green_texture.jpg"
+import green_texture from "../../assets/images/green_texture.jpg"
 import "./Header.css"
 
 const Header = () => {
