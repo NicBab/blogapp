@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
+const cors = require("cors")
 
 const authRoute = require("../routes/auth");
 const userRoute = require("../routes/users");
@@ -13,6 +14,7 @@ const categoryRoute = require("../routes/categories");
 
 dotenv.config();
 app.use(express.json());
+app.use(cors({credentials: true}))
 app.use("/images", express.static(path.join(__dirname, "../images")));
 
 
@@ -41,11 +43,11 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+// app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
+// })
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
