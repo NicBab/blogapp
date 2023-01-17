@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { Context } from "../../context/Context"
 // import { axiosInstance } from "../.././config"
 import axios from "axios";
+import { URL } from "../.././App"
 
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
@@ -13,7 +14,7 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const PF = "http://localhost:6001/images/";
+  const PF = URL;
 
   const handleUpdateAccount = async (e) => {
     dispatch({ type: "UPDATE_START" });

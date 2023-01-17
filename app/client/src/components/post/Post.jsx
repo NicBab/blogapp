@@ -1,8 +1,9 @@
 import "./Post.css";
 import { Link } from "react-router-dom";
+import { URL } from "../.././App"
 
 const Post = ({ post }) => {
-  const PF = "http://localhost:6001/images/";
+  const PF = URL;
 
   return (
     <div className="post">

@@ -5,12 +5,13 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context"
 import "./SinglePost.css";
+import { URL } from "../.././App"
 
 export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "http://localhost:6001/images/";
+  const PF = URL;
   const { user, dispatch } = useContext(Context);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

@@ -15,7 +15,7 @@ const categoryRoute = require("../routes/categories");
 dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}))
-app.use(cors({ origin: ["http://localhost:3000", "https://blog-app.onrender.com" ]}))
+app.use(cors({credentials: true}))
 app.use("/images", express.static(path.join(__dirname, "../images")));
 
 

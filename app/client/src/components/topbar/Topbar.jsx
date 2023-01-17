@@ -4,10 +4,11 @@ import { Context } from "../../context/Context"
 import { useContext } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import "./Topbar.css"
+import { URL } from "../.././App"
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://localhost:6001/images/";
+  const PF = URL;
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
