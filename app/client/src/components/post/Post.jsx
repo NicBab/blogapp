@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const Post = ({ post }) => {
-  const PF = "http://localhost:6001/images/"
+  const PF = "https://blog-app-wvlc.onrender.com/images/"
    
 
   return (

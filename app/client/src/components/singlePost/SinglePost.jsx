@@ -11,7 +11,7 @@ export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "http://localhost:6001/images/";
+  const PF = "https://blog-app-wvlc.onrender.com/images/";
   const { user, dispatch } = useContext(Context);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -28,7 +28,7 @@ export default function SinglePost() {
 
   useEffect(() => {
     getPost()
-  }, [path])
+  }, [path]) //eslint-disable-line react-hooks/exhaustive-deps
 
   const handleDelete = async () => {
     try {

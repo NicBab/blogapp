@@ -13,7 +13,7 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const URL = "http://localhost:6001/api/images/"
+  const URL = "https://blog-app-wvlc.onrender.com/api/images/"
   const PF = URL;
   
 

@@ -7,7 +7,7 @@ import "./Topbar.css"
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
-  const URL = "http://localhost:6001/api/images/"
+  const URL = "https://blog-app-wvlc.onrender.com/api/images/"
   const PF = URL;
 
   const handleLogout = () => {
