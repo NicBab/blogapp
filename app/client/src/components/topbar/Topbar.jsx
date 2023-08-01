@@ -52,7 +52,7 @@ const Topbar = () => {
       <div className="topRight">
         {user ? (
           <>
-            <Link to="/settings">
+            <Link to="https://blog-app-wvlc.onrender.com/settings">
               {user.profilePic ? (
                 <img
                   className="topImg"

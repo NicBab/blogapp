@@ -17,7 +17,7 @@ const Register = () => {
     dispatch({type: "LOGIN_START"})
     setError(false);
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post("https://blog-app-wvlc.onrender.com/auth/register", {
         username,
         email,
         password,

@@ -12,7 +12,7 @@ const Post = ({ post }) => {
         <img className="postImg" src={PF + post.photo} alt={`${post._id}`} />
       )}
       <div className="postInfo">
-        <Link to={`/post/${post._id}`} className="link">
+        <Link to={`https://blog-app-wvlc.onrender.com/post/${post._id}`} className="link">
           <span className="postTitle">{post.title}</span>
         </Link>
         <div className="postCats">

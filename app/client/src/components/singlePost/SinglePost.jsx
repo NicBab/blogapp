@@ -19,7 +19,7 @@ export default function SinglePost() {
   const [category, setCategory] = useState([])
 
   const getPost = async () => {
-    const res = await axios.get("/posts/" + path);
+    const res = await axios.get("https://blog-app-wvlc.onrender.com/posts/" + path);
     setPost(res.data);
     setTitle(res.data.title);
     setDescription(res.data.description);
@@ -32,7 +32,7 @@ export default function SinglePost() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axios.delete(`https://blog-app-wvlc.onrender.com/posts/${post._id}`, {
         username: user._id,
       });
       window.location.replace("/");
@@ -42,7 +42,7 @@ export default function SinglePost() {
   const handleUpdate = async () => {
     dispatch({type: "UPDATE_START"})
     try {
-      const res = await axios.put(`/posts/${post._id}`, {
+      const res = await axios.put(`https://blog-app-wvlc.onrender.com/posts/${post._id}`, {
         username: user.username,
         title,
         description,
@@ -91,7 +91,7 @@ export default function SinglePost() {
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
             Author:
-            <Link to={`/?user=${post.username}`} className="link">
+            <Link to={`https://blog-app-wvlc.onrender.com/?user=${post.username}`} className="link">
               <b> {post.username}</b>
             </Link>
           </span>

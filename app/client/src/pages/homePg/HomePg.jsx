@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("/posts/" + search)
+        const res = await axios.get("https://blog-app-wvlc.onrender.com/posts/" + search)
         setPosts(res.data)
         
       } catch (error) {

@@ -23,7 +23,7 @@ const Write = () => {
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get("https://blog-app-wvlc.onrender.com/categories");
       setCats(res.data);
     };
     getCats();
@@ -45,14 +45,14 @@ const Write = () => {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("https://blog-app-wvlc.onrender.com/upload", data);
       } catch (err) {
         console.error(err);
       }
     }
     try {
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
+      const res = await axios.post("https://blog-app-wvlc.onrender.com/posts", newPost);
+      window.location.replace("https://blog-app-wvlc.onrender.com/post/" + res.data._id);
     } catch (err) {
       console.error(err);
     }
