@@ -11,7 +11,7 @@
 
 .singlePostImg {
     width: 100%;
-    height: 800px;
+    height: 100%;
     border-radius: 5px;
     object-fit: cover;
 }
@@ -103,7 +103,7 @@
     width: 100px;
     border: none;
     padding: 5px;
-    color: white;
+    color: teal;
     border-radius: 5px;
     cursor: pointer;
     align-self: flex-end;

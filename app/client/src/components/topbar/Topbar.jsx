@@ -4,10 +4,10 @@ import { Context } from "../../context/Context"
 import { useContext } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import "./Topbar.css"
-import { URL } from "../.././App"
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
+  const URL = "http://localhost:6001/api/images/"
   const PF = URL;
 
   const handleLogout = () => {
@@ -78,7 +78,6 @@ const Topbar = () => {
             </li>
           </ul>
         )}
-        
       </div>
     </div>
   );

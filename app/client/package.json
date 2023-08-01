@@ -15,6 +15,7 @@
     "axios": "^1.2.0",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "emailjs": "^4.0.1",
     "http-proxy-middleware": "^2.0.6",
     "morgan": "^1.10.0",

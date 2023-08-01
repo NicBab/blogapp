@@ -5,7 +5,6 @@ import { useContext, useState } from "react";
 import { Context } from "../../context/Context"
 // import { axiosInstance } from "../.././config"
 import axios from "axios";
-import { URL } from "../.././App"
 
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
@@ -14,7 +13,9 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
+  const URL = "http://localhost:6001/api/images/"
   const PF = URL;
+  
 
   const handleUpdateAccount = async (e) => {
     dispatch({ type: "UPDATE_START" });
@@ -75,7 +76,7 @@ const Settings = () => {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF + user.profilePic}
+              src={file ? window.URL.createObjectURL(file) : PF + user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">

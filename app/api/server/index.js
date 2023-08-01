@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: false}))
 app.use(cors({credentials: true}))
 app.use("/images", express.static(path.join(__dirname, "../images")));
 
+app.get("/", async (rq, res) => {
+  res.send("Hello from dallE");
+});
 
 mongoose
   .connect(process.env.MONGO_URL, {

@@ -12,7 +12,7 @@ import {
   RegisterPg,
 } from "./pages/index/index.pages";
 import { Context } from "./context/Context";
-export const URL = process.env.SERVER_URL;
+
 
 function App() {
   const { user } = useContext(Context);

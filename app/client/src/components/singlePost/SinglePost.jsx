@@ -5,29 +5,30 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context"
 import "./SinglePost.css";
-import { URL } from "../.././App"
+// import { URL } from "../.././App"
 
 export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = URL;
+  const PF = "http://localhost:6001/images/";
   const { user, dispatch } = useContext(Context);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
   const [category, setCategory] = useState([])
 
+  const getPost = async () => {
+    const res = await axios.get("/posts/" + path);
+    setPost(res.data);
+    setTitle(res.data.title);
+    setDescription(res.data.description);
+    setCategory(res.data.categories)
+  };
+
   useEffect(() => {
-    const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
-      setPost(res.data);
-      setTitle(res.data.title);
-      setDescription(res.data.description);
-      setCategory(res.data.categories)
-    };
-    getPost();
-  }, [path]);
+    getPost()
+  }, [path])
 
   const handleDelete = async () => {
     try {
@@ -72,6 +73,7 @@ export default function SinglePost() {
         ) : (
           <h1 className="singlePostTitle">
             {title}
+          
             {post.username === user?.username && (
               <div className="singlePostEdit">
                 <i
@@ -111,7 +113,7 @@ export default function SinglePost() {
         {updateMode && (
           <>
             <button className="updatePostButton" onClick={handleUpdate}>
-              Update
+              UPDATE
             </button>
             <button
               className="cancelButton"
