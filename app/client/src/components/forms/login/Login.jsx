@@ -17,7 +17,7 @@ const Login = () => {
     setError();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("https://blog-app-wvlc.onrender.com/auth/login", {
+      const res = await axios.post("/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

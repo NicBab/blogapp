@@ -7,7 +7,7 @@ import "./Topbar.css"
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
-  const URL = "https://blog-app-wvlc.onrender.com/api/images/"
+  const URL = "http://localhost:6001/api/images/"
   const PF = URL;
 
   const handleLogout = () => {
@@ -52,7 +52,7 @@ const Topbar = () => {
       <div className="topRight">
         {user ? (
           <>
-            <Link to="https://blog-app-wvlc.onrender.com/settings">
+            <Link to="/settings">
               {user.profilePic ? (
                 <img
                   className="topImg"

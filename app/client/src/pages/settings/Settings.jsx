@@ -13,7 +13,7 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const URL = "https://blog-app-wvlc.onrender.com/api/images/"
+  const URL = "http://localhost:6001/images/"
   const PF = URL;
   
 
@@ -33,13 +33,13 @@ const Settings = () => {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("https://blog-app-wvlc.onrender.com/upload", data);
+        await axios.post("/upload", data);
       } catch (err) {
         console.error(err);
       }
     }
     try {
-      const res = await axios.put("https://blog-app-wvlc.onrender.com/users/" + user._id, updatedUser);
+      const res = await axios.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
@@ -51,7 +51,7 @@ const Settings = () => {
   const deleteAccount = async (_id) => {
     try {
       window.alert("Are you sure you want to delete this account? This action can not be undone")
-      await axios.delete(`https://blog-app-wvlc.onrender.com/users/${user._id}`, {
+      await axios.delete(`/users/${user._id}`, {
         _id: { username: user._id },
       });
       window.location.replace("/");

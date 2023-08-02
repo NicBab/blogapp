@@ -10,7 +10,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("https://blog-app-wvlc.onrender.com/categories");
+      const res = await axios.get("/categories");
       setCats(res.data);
     };
     getCats();
@@ -29,7 +29,7 @@ const Sidebar = () => {
         <ul className="sidebarList">
           {catDescending.map((cat, idx) => (
             <div key={idx}>
-              <Link to={`https://blog-app-wvlc.onrender.com/?cat=${cat.name}`} className="link">
+              <Link to={`/?cat=${cat.name}`} className="link">
                 <li className="sidebarListItem">{cat.name}</li>
               </Link>
             </div>
