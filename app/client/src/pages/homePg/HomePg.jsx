@@ -1,26 +1,25 @@
 import { Header, Sidebar, Posts } from "../../components/index/index.comp";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-// import { axiosInstance } from "../.././config"
-import axios from "axios";
+import { axiosInstance } from "../../config.js"
 import "./HomePg.css"
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await axios.get("/posts/" + search)
-        setPosts(res.data)
-        
-      } catch (error) {
-        console.error(error)
-      }
+  const fetchPosts = async ()=> {
+    try {
+      const res = await axiosInstance.get("/posts/" + search)
+      setPosts(res.data)
+    } catch (error) {
+      console.error(error.message)
     }
+  }
+
+  useEffect(() => {
     fetchPosts()
-  }, [search])
+  }, [search]) //eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

@@ -11,9 +11,9 @@ export const LoginFailure = () => ({
     type: "LOGIN_FAILURE"
 })
 
-export const updateStart = (userCredentials) => ({
+export const updateStart = (user) => ({
     type: "UPDATE_START",
-    payload: userCredentials
+    payload: user,
 })
 
 export const updateSuccess = (user) => ({

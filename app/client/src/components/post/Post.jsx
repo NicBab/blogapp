@@ -2,12 +2,12 @@ import "./Post.css";
 import { Link } from "react-router-dom";
 
 const Post = ({ post }) => {
-  const PF = "http://localhost:6001/images/"
+  const URL = "https://blog-app-wvlc.onrender.com/images/";
    
   return (
     <div className="post">
       {post.photo && (
-        <img className="postImg" src={PF + post.photo} alt={`${post._id}`} />
+        <img className="postImg" src={URL + post.photo} alt={`${post._id}`} />
       )}
       <div className="postInfo">
         <Link to={`/post/${post._id}`} className="link">

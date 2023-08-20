@@ -7,8 +7,7 @@ import "./Topbar.css"
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
-  const URL = "http://localhost:6001/api/images/"
-  const PF = URL;
+  const URL = "https://blog-app-wvlc.onrender.com/images/"
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -56,7 +55,7 @@ const Topbar = () => {
               {user.profilePic ? (
                 <img
                   className="topImg"
-                  src={PF + user.profilePic}
+                  src={URL + user.profilePic}
                   alt="img not found"
                 />
               ) : (

@@ -3,8 +3,7 @@ import { Link } from "react-router-dom"
 import { Sidebar } from "../../components/index/index.comp";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context"
-// import { axiosInstance } from "../.././config"
-import axios from "axios";
+import { axiosInstance } from "../.././config"
 
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
@@ -13,9 +12,7 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const URL = "http://localhost:6001/images/"
-  const PF = URL;
-  
+  const URL = process.env.URL
 
   const handleUpdateAccount = async (e) => {
     dispatch({ type: "UPDATE_START" });
@@ -33,13 +30,13 @@ const Settings = () => {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (err) {
         console.error(err);
       }
     }
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axiosInstance.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
@@ -51,7 +48,7 @@ const Settings = () => {
   const deleteAccount = async (_id) => {
     try {
       window.alert("Are you sure you want to delete this account? This action can not be undone")
-      await axios.delete(`/users/${user._id}`, {
+      await axiosInstance.delete(`/users/${user._id}`, {
         _id: { username: user._id },
       });
       window.location.replace("/");
@@ -76,7 +73,7 @@ const Settings = () => {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? window.URL.createObjectURL(file) : PF + user.profilePic}
+              src={file ? window.URL.createObjectURL(file) : URL + user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">
