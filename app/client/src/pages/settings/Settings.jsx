@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Sidebar } from "../../components/index/index.comp";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context"
-import { axiosInstance } from "../.././config"
+import { axiosInstance } from "../../config.js";
 
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
